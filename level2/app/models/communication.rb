@@ -1,5 +1,6 @@
 class Communication < ApplicationRecord
   belongs_to :practitioner
+  validates :sent_at, presence: true
 
   def as_json(options = nil)
     {

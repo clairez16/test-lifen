@@ -45,3 +45,13 @@ curl -X POST \
 ```
 
 
+Amélioration de la méthode index (pour 10 itérations):
+- Avant tout changement > 63.154729157 s
+- Passer à Communication.includes(:practitioner).to_json > 7.236124021 s
+
+
+Amélioration de la méthode create (pour 10000 itérations):
+- Avant toute modification > 146.370824222 s
+- Passer à find_by à la place de where().first > 142.651312388 s
+- Changer schema de db pour ajouter reference à practitioner dans table communication + passer à Communication.new(practitioner: practitioner...) > supprime une requête SQL > 134.45091281
+- Si beaucoup de create par batch, possible de le passer en background job
