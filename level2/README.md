@@ -47,7 +47,7 @@ curl -X POST \
 
 Amélioration de la méthode index (pour 10 itérations):
 - Avant tout changement > 63.154729157 s
-- Passer à Communication.includes(:practitioner).to_json > 7.236124021 s
+- Passer à Communication.includes(:practitioner).to_json > réduit considérablement le nombre de requêtes SQL > 7.236124021 s
 
 
 Amélioration de la méthode create (pour 10000 itérations):
